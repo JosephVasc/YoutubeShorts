@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">YoutubeShorts</string>
+    <string name="welcome">Welcome to Youtube Shorts clone by Joseph Vasconcelos and Ronesh Singh</string>
+    <string name="login">Login</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
 </resources>
