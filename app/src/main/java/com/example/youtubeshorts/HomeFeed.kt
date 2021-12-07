@@ -8,12 +8,16 @@ import android.widget.VideoView
 import android.net.Uri
 import android.net.Uri.*
 import android.os.Environment
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class HomeFeed: AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_feed)
+        videoPlayer()
+    }
+    fun videoPlayer(){
         val videoView = findViewById<VideoView>(R.id.videoView)
         //Creating MediaController
         val mediaController = MediaController(this)
@@ -24,6 +28,8 @@ class HomeFeed: AppCompatActivity()  {
         videoView.setMediaController(mediaController)
         videoView.setVideoURI(uri)
         videoView.requestFocus()
+
         videoView.start()
     }
+
 }
