@@ -100,12 +100,12 @@ class HomeFeed: AppCompatActivity()  {
 
     private fun onSwipeBottom() {
         videoPlayer1()
-        Toast.makeText(this, "Swiped down", Toast.LENGTH_LONG).show()
+        
     }
 
     private fun onSwipeTop() {
         videoPlayer()
-        TODO("Not yet implemented")
+        
     }
 
 
