@@ -17,7 +17,9 @@ class HomeFeed: AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_feed)
+
         videoPlayer()
+
         detector = GestureDetectorCompat(this, swipedownListener())
 
 
@@ -97,32 +99,51 @@ class HomeFeed: AppCompatActivity()  {
     }
 
     private fun onSwipeBottom() {
-        videoPlayer()
+        videoPlayer1()
+        Toast.makeText(this, "Swiped down", Toast.LENGTH_LONG).show()
     }
 
     private fun onSwipeTop() {
         videoPlayer()
+        TODO("Not yet implemented")
     }
 
 
     fun videoPlayer(){
+
+
         val videoView = findViewById<VideoView>(R.id.videoView)
         //Creating MediaController
         val mediaController = MediaController(this)
         mediaController.setAnchorView(videoView)
         //specify the location of media file
-        var random = (1..3).shuffled().last()
-        var uri : Uri = parse("android.resource://" + getPackageName() +"/"+R.raw.video1)
-        when (random){
-            1 -> uri = parse("android.resource://" + getPackageName() +"/"+R.raw.video1)
-            2 -> uri = parse("android.resource://" + getPackageName() +"/"+R.raw.video2)
-            3 -> uri = parse("android.resource://" + getPackageName() +"/"+R.raw.video3)
-        }
+        val uri:Uri = parse("android.resource://" + getPackageName() +"/"+R.raw.video1)
         //Setting MediaController and URI, then starting the videoView
         videoView.setMediaController(mediaController)
         videoView.setVideoURI(uri)
         videoView.requestFocus()
+
         videoView.start()
+
     }
+    fun videoPlayer1(){
+
+
+        val videoView = findViewById<VideoView>(R.id.videoView)
+        //Creating MediaController
+        val mediaController = MediaController(this)
+        mediaController.setAnchorView(videoView)
+        //specify the location of media file
+        val uri:Uri = parse("android.resource://" + getPackageName() +"/"+R.raw.video2)
+        //Setting MediaController and URI, then starting the videoView
+        videoView.setMediaController(mediaController)
+        videoView.setVideoURI(uri)
+        videoView.requestFocus()
+
+        videoView.start()
+
+    }
+
+
 
 }
